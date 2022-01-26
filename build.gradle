@@ -6,6 +6,14 @@ plugins {
 group = 'com.gradlehero'
 version = '0.1.0-SNAPSHOT'
 
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
+}
+
 gradlePlugin {
     plugins {
         fileDiff {
@@ -13,4 +21,8 @@ gradlePlugin {
             implementationClass = 'com.gradlehero.FileDiffPlugin'
         }
     }
+}
+
+test {
+    useJUnitPlatform()
 }
